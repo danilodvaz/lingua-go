@@ -65,6 +65,7 @@ const (
 	Japanese
 	Kazakh
 	Korean
+	KoreanLatin
 	Latin
 	Latvian
 	Lithuanian
@@ -262,6 +263,8 @@ func (language Language) IsoCode639_1() IsoCode639_1 {
 		return KK
 	case Korean:
 		return KO
+	case KoreanLatin:
+		return KO_Latin
 	case Latin:
 		return LA
 	case Latvian:
@@ -422,6 +425,8 @@ func (language Language) IsoCode639_3() IsoCode639_3 {
 		return KAZ
 	case Korean:
 		return KOR
+	case KoreanLatin:
+		return KOR_Latin
 	case Latin:
 		return LAT
 	case Latvian:
@@ -531,6 +536,7 @@ func (language Language) alphabets() []alphabet {
 		Indonesian,
 		Irish,
 		Italian,
+		KoreanLatin,
 		Latin,
 		Latvian,
 		Lithuanian,

@@ -132,6 +132,9 @@ const (
 	// KO is the ISO 639-1 code for Korean.
 	KO
 
+	// KO is the ISO 639-1 code for Korean.
+	KO_Latin
+
 	// LA is the ISO 639-1 code for Latin.
 	LA
 
@@ -358,6 +361,9 @@ const (
 
 	// KOR is the ISO 639-3 code for Korean.
 	KOR
+
+	// KOR is the ISO 639-3 code for Korean.
+	KOR_Latin
 
 	// LAT is the ISO 639-3 code for Latin.
 	LAT
