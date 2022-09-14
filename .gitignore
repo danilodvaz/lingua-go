@@ -25,6 +25,7 @@ vendor/
 bin/
 tmp/
 out/
+lib/
 *.iml
 *.ipr
 *.iws
