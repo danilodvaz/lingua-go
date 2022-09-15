@@ -1,4 +1,4 @@
-module github.com/pemistahl/lingua-go
+module github.com/danilodvaz/lingua-go/v2
 
 go 1.16
 
