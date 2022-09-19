@@ -123,6 +123,9 @@ const (
 	// JA is the ISO 639-1 code for Japanese.
 	JA
 
+	// JA_Latin is the code for Romanized Japanese.
+	JA_Latin
+
 	// KA is the ISO 639-1 code for Georgian.
 	KA
 
@@ -132,7 +135,7 @@ const (
 	// KO is the ISO 639-1 code for Korean.
 	KO
 
-	// KO is the ISO 639-1 code for Korean.
+	// KO_Latin is the code for Romanized Korean.
 	KO_Latin
 
 	// LA is the ISO 639-1 code for Latin.
@@ -353,6 +356,9 @@ const (
 	// JPN is the ISO 639-3 code for Japanese.
 	JPN
 
+	// JPN is the code for Romanized Japanese.
+	JPN_Latin
+
 	// KAT is the ISO 639-3 code for Georgian.
 	KAT
 
@@ -362,7 +368,7 @@ const (
 	// KOR is the ISO 639-3 code for Korean.
 	KOR
 
-	// KOR is the ISO 639-3 code for Korean.
+	// KOR is the code for Romanized Korean.
 	KOR_Latin
 
 	// LAT is the ISO 639-3 code for Latin.

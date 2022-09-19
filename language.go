@@ -63,6 +63,7 @@ const (
 	Irish
 	Italian
 	Japanese
+	JapaneseLatin
 	Kazakh
 	Korean
 	KoreanLatin
@@ -259,6 +260,8 @@ func (language Language) IsoCode639_1() IsoCode639_1 {
 		return IT
 	case Japanese:
 		return JA
+	case JapaneseLatin:
+		return JA_Latin
 	case Kazakh:
 		return KK
 	case Korean:
@@ -421,6 +424,8 @@ func (language Language) IsoCode639_3() IsoCode639_3 {
 		return ITA
 	case Japanese:
 		return JPN
+	case JapaneseLatin:
+		return JPN_Latin
 	case Kazakh:
 		return KAZ
 	case Korean:
@@ -536,6 +541,7 @@ func (language Language) alphabets() []alphabet {
 		Indonesian,
 		Irish,
 		Italian,
+		JapaneseLatin,
 		KoreanLatin,
 		Latin,
 		Latvian,

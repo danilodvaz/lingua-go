@@ -100,6 +100,7 @@ func TestLanguageDetectorBuilder_FromAllLanguagesWithout(t *testing.T) {
 			Irish,
 			Italian,
 			Japanese,
+			JapaneseLatin,
 			Kazakh,
 			Korean,
 			KoreanLatin,
