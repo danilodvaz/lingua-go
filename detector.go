@@ -168,9 +168,8 @@ func (detector languageDetector) ComputeLanguageConfidenceValues(text string) []
 		ngramLengthRange = []int{1, 2, 3, 4, 5}
 	}
 
-	ngramLengthRangeSize := len(ngramLengthRange)
-	probabilityChannel := make(chan map[Language]float64, ngramLengthRangeSize)
-	unigramCountChannel := make(chan map[Language]uint32, ngramLengthRangeSize)
+	probabilityChannel := make(chan map[Language]float64, len(ngramLengthRange))
+	unigramCountChannel := make(chan map[Language]uint32, 1)
 
 	for _, ngramLength := range ngramLengthRange {
 		go detector.lookUpLanguageModels(
@@ -182,8 +181,14 @@ func (detector languageDetector) ComputeLanguageConfidenceValues(text string) []
 		)
 	}
 
+	var unigramCounts map[Language]uint32
+	for _, v := range ngramLengthRange {
+		if v == 1 {
+			unigramCounts = <-unigramCountChannel
+		}
+	}
+
 	probabilityMaps := detector.getProbabilityMaps(probabilityChannel, ngramLengthRange)
-	unigramCounts := <-unigramCountChannel
 	summedUpProbabilities := detector.sumUpProbabilities(probabilityMaps, unigramCounts, filteredLanguages)
 
 	if len(summedUpProbabilities) == 0 {
@@ -470,8 +475,6 @@ func (detector languageDetector) lookUpLanguageModels(
 		}
 
 		detector.countUnigrams(unigramCountChannel, testDataModel, intersectedLanguages)
-	} else {
-		unigramCountChannel <- nil
 	}
 }
 
